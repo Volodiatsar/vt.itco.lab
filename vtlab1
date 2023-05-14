@@ -1,1 +1,285 @@
-jb
+a = "This"
+b = ' is '
+c = """
+string.
+Written in Python.
+"""
+d = str(21)
+concatination_example = a + b + c.capitalize() + d
+
+print(concatination_example, "\n", type(d), "\n", concatination_example.count("t"))
+#numeric - тут є декілька типів числових даних, наприклад цілі числа int та числа з плаваючою корапкою float.
+
+i = 12
+print(i, type(i))
+
+f = 12.6
+print(f, type(f))
+
+print("Примусово перетворюю int y float:", type(float(i)))
+print("І навпаки float y int:", type(int(f)))
+
+print("Переводимо в двійкову, вісікову та шістнадцяткову форму:", 
+        bin(i), 
+        oct(i), 
+        hex(i), 
+        "Та рахуємо кількість одиниць:", 
+        i.bit_count())
+#Sequence - послідовні типи даних, або набори даних. До них відносяться list та tuple.
+
+l = [a, i, f, ["List", "in", "list"], "and final sting"]
+print(l, type(l))
+print("Виводжу перший елемент в списку по його індексу 0:",l[0])
+print("Виводжу останні елемент:", l[-1])
+print("Виводжу слайс:", l[1:3])
+print("Виводжу елементи з вкладеного списку:", l[3][1])
+
+l.append("New final element")
+print(l)
+l.pop(-2)
+print(l)
+import math
+print(math.pi)
+p = math.pi
+t = (a, p, i, f, ["List", "in", "list"], "and final sting")
+
+print(t, type(t))
+
+
+p = 2.13
+print("Я перевизначив змінну P в якій була констанні Пі", p)
+#t[1] = p # Це виведе помилку, бо Tuple змінювати не можна!
+
+print(t)
+import numpy as np
+print(type(math.pi))
+
+l = list([1, 2, 3])
+np_l = np.array(l)
+print(f"Маємо тип {type(l)} зі значенями {l} а якщо застосувати бібліотеку numpy буде {type(np_l)} із значеннями {np_l}")
+#Mapping - типи мади які ставлять у відповідність ключ значення, до них належать dict
+
+a = "key"
+b = "b"
+d = {"ключ": "значення", "key": "value", 0: "Це не нульовий елемент", 'a': a, b: [a, b]}
+print(f"""Доступаємось до елементів словника: 
+||| {d['ключ']} 
+||| {d[0]}
+||| {d['a']} 
+||| {d[a]}
+||| {d["b"]}
+""")
+#set type - до них відноситься тип даних set
+
+s = {"a", "a", "b", "b"}
+print(s, type(s))
+l = [1, 1, 2, 1, 2]
+s2 = set(l)
+print(f"Був {type(l)} з {l.__len__()} елементами, став {type(s2)} з {len(s2)} елементами")
+#Вбудовані константи
+a = True
+b = False
+true = True
+print(f"Маю змінну true яка дуже похожа до константи {true}")
+c = None
+print(type(c))
+
+def my_fun(a=None):
+    return a
+print(my_fun("Я передав значення у функцію"))
+#Вбудовані функції
+a = [1, 2, 3]
+b = ["a", "b", "c"]
+c = ["-", "+", "="]
+print(list(zip(a,b,c)))
+print((a[0],b[0],c[0]))
+
+print(oct(12), hex(14))
+
+print(f"Змінна {a} є обєктом класу {type(a)} та має ID {id(a)}")
+a = [1, 2, 3]
+print(f"Змінна {a} є обєктом класу {type(a)} та має ID {id(a)}")
+a.append("wq")
+print(id(a))
+#Цикли
+#Ітераційні цикли
+
+i = 0
+while i < 10:
+    print(i)
+    i+=2
+print(f"Кінцеве значення {i}")
+
+N = range(0, 10, 2)
+print(f"Значення по яких будемо ітерувати: {list(N)}")
+
+for i in N:
+    print(i)
+print(f"Кінцеве значення {i}")
+#Умовниі цикли
+
+from random import randint
+
+print(10*"#", "Приклад з while", 10*"#")
+i = 0
+while randint(0, 10) < 8:
+    print("Згенерувалось випадкве число менше 8, продовжуємо.")
+    i+=1
+print(f"Цикл виконувався {i} разів")
+
+while True:
+    i = randint(0, 10)
+    print(f"Згенероване число {i}")
+    if i > 8:
+        print("Згенероване число більше 8, зупиняємо цикл.")
+        break
+
+print(10*"#", "Приклад з for", 10*"#")
+for _ in iter(int, 1):
+    i = randint(0, 10)
+    print(f"Згенероване число {i}")
+    if i > 8:
+        print("Згенероване число більше 8, зупиняємо цикл.")
+        break
+while True:
+    i = randint(0, 10)
+    print(f"Ми зайшли в цикл з і = {i}")
+    if i < 5:
+        print("Це виконається якщо і < 5, перескакуємо ітерацію")
+        continue
+    
+    if i > 5:
+        print("Це виконається якщо і > 5, зупиняємо цикл")
+        break
+    
+    print("Це виконається тільки при і = 5")
+#Розгалуження
+a = randint(0, 9)
+if a > 8:
+    print(f"a = {a}")
+elif a == 5:
+    print(a)
+elif a == 6:
+    print(a)
+else:
+    print(f"Значення а = {a}")
+
+l, u, s = (0, 0, 0)
+
+for i in range(10):
+    a = randint(0, i)
+    print(f"Випадково згенероване число в діапазоні [0, {i}]  = {a}")
+    if a == 0:
+        print("Число є рівним нижній межі")
+        l+=1 
+    elif a == i:
+        print("Число є рівним верхній межі")
+        u+=1
+    else:
+        print("Число з середини діапазону")
+        s+=1
+print(f"Ми отримали {l} разів нижній діапазон, {u} разів верхній діапазон та {s} разів число з середини діапазону")
+play_game = False
+
+if play_game:
+    from random import randint
+    s = randint(0, 10)
+    print("Вгадай число від 0 до 10")
+    while True:
+        a = input("Введіть число:")
+        print(f"Введене число {a}")
+        b = int(a)
+        if isinstance(b, int):
+            if b > s:
+                print("Забагато")
+            elif b < s:
+                print("Замало")
+            else:
+                print("Вгадали!")
+                break
+        else:
+            print(f"{a} на є числом від 0 до 10")
+#OneLiner - це код написаний в одну стрічку. можна робити для розгалужень
+
+a = 4
+
+if a > 5:
+    b = a
+else:
+    b = 10
+
+c = a if a > 5 else 10
+
+print(f"Значення змінної у першому випадку буде: {b} а у другому: {c}")
+#та для циклів це називається List Comprehension
+
+l1 = []
+for i in range(1, 10):
+    l1.append(i**2)
+
+l2 = [ i**2 for i in range(1, 10) ]
+
+print(f"Перший цикл: {l1} та результат другого циклу: {l2}")
+
+import sys
+g = ( i**2 for i in range(1, 1000) )
+
+t2 = [ i for i in g ]
+print(f"Отримали: {type(g)} і щоб вивести значення перетворили на список {type}")
+
+print(f"Генератор має розмір {sys.getsizeof(g)} байт а при перетворенні в ліст розмір буде: {sys.getsizeof(t2)} байт")
+#Виловлювання винятків в програмах
+d = k + 10
+print("Це ніколи не виведеться")
+initializeVariable = False
+try:
+    if initializeVariable:
+        k = 100
+    print("Що буде якщо викличемо неініціалізовану змінну ?")
+    d = k + 10
+    print(f"Змінна була ініціалізована значенням {k} і результат {d}")
+    del(k)
+except NameError as e:
+    print(f"Буде от така помилка: {e}")
+finally:
+    print("Цей блок виконається завжди!")
+d = {"a": 1, "b": 4}
+print(d["c"])
+print("Це ніколи не виведеться")
+key = 'C'
+try:
+    print(f"Що буде якщо доступитись до неіснуючого елемента {key} в словнику ?")
+    print(d[key])
+except KeyError as e:
+    print(f"Буде от така помилка: ключа {e} не існує")
+l = [1, 2]
+print(l[5])
+print("Це ніколи не виведеться")
+index = 3
+try:
+    print(f"Що буде якщо доступитись до неіснуючого індекса {index}?")
+    print(l[index])
+except IndexError as e:
+    print(f"Буде от така помилка: {e}")
+#Робота з файлами
+import os
+
+print(f"Спочатку маємо такі файли: {os.listdir()}")
+
+with open("test.txt", "w") as f:
+    f.write("Hello")
+
+with open("test.txt", "r") as f:  
+    print(f.readline())
+
+print(f"Після виконання програми маємо: {os.listdir()}")
+os.remove("test.txt")
+#Функції та безіменні Lambdas
+def myfun(x):
+    return f"Квадрат величини {x}={x**2}"
+
+l1 = myfun
+print(f"Я викликаю функцію {type(l1)}: {l1(5)}")
+
+l2 = lambda x: f"Квадрат величини {x}={x**2}"
+print(f"Я можу це саме зробити з лямбдою {type(l2)}: {l2(5)}")
