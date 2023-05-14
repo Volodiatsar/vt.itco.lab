@@ -283,3 +283,47 @@ print(f"Я викликаю функцію {type(l1)}: {l1(5)}")
 
 l2 = lambda x: f"Квадрат величини {x}={x**2}"
 print(f"Я можу це саме зробити з лямбдою {type(l2)}: {l2(5)}")
+
+
+
+This is 
+string.
+written in python.
+21 
+ <class 'str'> 
+ 4
+12 <class 'int'>
+12.6 <class 'float'>
+Примусово перетворюю int y float: <class 'float'>
+І навпаки float y int: <class 'int'>
+Переводимо в двійкову, вісікову та шістнадцяткову форму: 0b1100 0o14 0xc Та рахуємо кількість одиниць: 2
+['This', 12, 12.6, ['List', 'in', 'list'], 'and final sting'] <class 'list'>
+Виводжу перший елемент в списку по його індексу 0: This
+Виводжу останні елемент: and final sting
+Виводжу слайс: [12, 12.6]
+Виводжу елементи з вкладеного списку: in
+['This', 12, 12.6, ['List', 'in', 'list'], 'and final sting', 'New final element']
+['This', 12, 12.6, ['List', 'in', 'list'], 'New final element']
+3.141592653589793
+('This', 3.141592653589793, 12, 12.6, ['List', 'in', 'list'], 'and final sting') <class 'tuple'>
+Я перевизначив змінну P в якій була констанні Пі 2.13
+('This', 3.141592653589793, 12, 12.6, ['List', 'in', 'list'], 'and final sting')
+<class 'float'>
+Маємо тип <class 'list'> зі значенями [1, 2, 3] а якщо застосувати бібліотеку numpy буде <class 'numpy.ndarray'> із значеннями [1 2 3]
+Доступаємось до елементів словника: 
+...
+Значення змінної у першому випадку буде: 10 а у другому: 10
+Перший цикл: [1, 4, 9, 16, 25, 36, 49, 64, 81] та результат другого циклу: [1, 4, 9, 16, 25, 36, 49, 64, 81]
+Отримали: <class 'generator'> і щоб вивести значення перетворили на список <class 'type'>
+Генератор має розмір 104 байт а при перетворенні в ліст розмір буде: 8856 байт
+Output is truncated. View as a scrollable element or open in a text editor. Adjust cell output settings...
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+Cell In[1], line 232
+    230 print(f"Генератор має розмір {sys.getsizeof(g)} байт а при перетворенні в ліст розмір буде: {sys.getsizeof(t2)} байт")
+    231 #Виловлювання винятків в програмах
+--> 232 d = k + 10
+    233 print("Це ніколи не виведеться")
+    234 initializeVariable = False
+
+NameError: name 'k' is not defined
